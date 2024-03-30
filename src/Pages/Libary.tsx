@@ -58,23 +58,23 @@ function Libary() {
   const updateDocs = () => {};
   return (
     <div className="max-w-[85%] relative mx-auto  pt-6">
-      <h1 className="font-bold text-[28px] mt-3">Library</h1>
+
       <button
         onClick={() => showModall()}
-        className="py-3 absolute top-6 right-4 rounded-[10px] px-7 bg-blue-500 hover:bg-blue-300 font-[500] text-[18px] text-white"
+        className="py-2 top-6 right-4 rounded-[10px] px-7 bg-white-500 hover:bg-blue-500 hover:text-white border-2 border-blue-500 font-[500] text-[18px] text-blue-500"
       >
-        add
+        add new book
       </button>
 
-      <div className="overflow-x-auto mt-[96px]  ml-[25px] max-w-[80%] rounded-[0] bg-inherit">
+      <div className="overflow-x-auto mt-[96px]  ml-[25px] max-w-[100%] rounded-[0] bg-inherit">
         <table className="table  ">
           {/* head */}
           <thead className="text-inherit font-bold text-[20px]">
             <tr>
               <th></th>
-              <th>Title</th>
-              <th>Published</th>
-              <th>System</th>
+              <th>Name</th>
+              <th>Year</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="relative">
@@ -93,7 +93,7 @@ function Libary() {
                   <td className="flex gap-6">
                     <button
                       onClick={() => delDocs(e.id)}
-                      className="bg-red-500 hover:bg-red-300 text-white   transition-all px-2 py-2 rounded-[999px]"
+                      className="bg-red-500 hover:bg-red-300 text-white   transition-all px-5 py-2  rounded-[999px]"
                     >
                       Delete
                     </button>
@@ -105,44 +105,43 @@ function Libary() {
         </table>
 
         {createPortal(
-          <dialog id="my1" className="modal bg-gray-500 bg-opacity-[0.8]">
+          <dialog id="my1" className="modal bg-white bg-opacity-[0.9]">
             <div className="modal-box bg-white">
               <form method="dialog">
-                {/* if there is a button in form, it will close the modal */}
                 <button className="btn btn-md btn-circle text-lg btn-ghost absolute right-2 top-2">
                   ✕
                 </button>
               </form>
-              <h3 className="font-bold mb-6 text-[28px]">add book</h3>
+              <h3 className="font-bold mb-6 text-[28px]">Add new book</h3>
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-col mb-3  gap-2">
-                  <span className="text-[18px] ml-1">Title</span>
+                  <span className="text-[18px] ml-1">Name</span>
                   <input
                     value={value1}
                     onChange={(e) => setValue1(e.target.value)}
                     type="text"
-                    className="bg-gray-100  py-3 px-4 text-[20px] rounded-[15px] w-[100%]"
+                    className="bg-gray-100  py-3 px-4 text-[17px]  w-[100%]"
                     required
                     placeholder="name of the book"
                   />
                 </div>
                 <div className="flex flex-col mb-8  gap-2">
-                  <span className="text-[18px] ml-1">Published Year</span>
+                  <span className="text-[18px] ml-1">Year</span>
                   <input
                     value={value2}
                     onChange={(e) => setValue2(e.target.value)}
                     type="number"
-                    className={`bg-gray-100  py-3 px-4 text-[20px] rounded-[15px] w-[100%] ${
+                    className={`bg-gray-100  py-3 px-4 text-[17px]  w-[100%] ${
                       loading ? "disabled:bg-green-200" : ""
                     }`}
                     required
-                    placeholder="1996"
+                    placeholder="pulished year"
                   />
                 </div>
 
                 <button
                   disabled={loading}
-                  className="w-full py-4 bg-blue-500 hover:bg-blue-300 text-white text-[18px] rounded-[15px] font-bold "
+                  className="w-full py-3 bg-blue-500 hover:bg-blue-300 text-white text-[18px] rounded-[15px] font-bold "
                 >
                   Submit
                 </button>

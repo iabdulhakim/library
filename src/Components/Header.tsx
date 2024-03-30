@@ -1,22 +1,11 @@
 import  { useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
 
 const nav: object[] = [
   {
     id: 1,
-    href: "/",
-    text: "Home",
-  },
-  {
-    id: 2,
-    href: "/about",
-    text: "About",
-  },
-  {
-    id: 3,
     href: "/libary",
-    text: "Libary",
+    text: "Library",
   },
 ];
 
@@ -25,7 +14,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <header className="container flex justify-between w-full py-3 items-center px-8 bg-sky-100 border-b border-b-slate-200">
-      <a href="" className="text-[26px] font-medium">Library</a>
+      <a href="" className="text-[26px] font-medium">Ashraf | Library</a>
       <ul className="flex gap-[80px]">
         {nav.map((e: any) => (
           <li key={e.id}>

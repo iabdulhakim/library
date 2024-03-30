@@ -73,10 +73,10 @@ function SignUp() {
   };
   return (
     <div className="flex justify-center items-center bg-[#f0f0f0]">
-      <div className="w-[360px] mx-auto my-[25vh] py-4 px-6 rounded-[15px] bg-blue-400">
+      <div className="w-[500px] mx-auto my-[25vh] py-4 px-6 rounded-[15px] bg-slate-100">
         <form onSubmit={(e) => handleSubmit(e)} className="felx flex-col">
           <div className="flex justify-between w-full items-center">
-            <h3 className="font-bold  text-[24px] text-white mb-6">Sign In</h3>
+            <h3 className="font-bold  text-[24px] text-black mb-6">Sign Up</h3>
             <span
               onClick={handleGoogle}
               className="text-[#33333] text-[13px] font-[500] cursor-pointer"
@@ -84,12 +84,16 @@ function SignUp() {
               Register with google email
             </span>
           </div>
+          <label className="font-[500] text-[#33333]" htmlFor="email">
+            Your e-mail
+          </label>
           <input
             onChange={handleChange}
             name="email"
+            id="email"
             type="email"
             required
-            className="w-[90%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
+            className="w-[100%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
             placeholder="Your email"
           />
 
@@ -98,7 +102,7 @@ function SignUp() {
           </label>
           <input
             onChange={handleChange}
-            className="w-[80%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
+            className="w-[100%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
             id="pass"
             required
             name="password"
@@ -106,12 +110,12 @@ function SignUp() {
           />
 
           <label className="font-[500] text-[#33333]" htmlFor="pass2">
-            Confirm
+            Confirm password
           </label>
           <input
             name="passwordConforim"
             onChange={handleChange}
-            className="w-[80%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
+            className="w-[100%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
             id="pass2"
             type="password"
             required
@@ -119,20 +123,11 @@ function SignUp() {
 
           <button
             disabled={loading}
-            className="bg-green-400 mb-4 disabled:bg-green-200 hover:bg-green-300 rounded-[10px] font-bold text-[20px] text-white w-full py-3"
+            className="bg-blue-400 mb-4 disabled:bg-blue-200 hover:bg-blue-300 rounded-[10px] font-bold text-[20px] text-white w-full py-3"
           >
             submit
           </button>
 
-          <span className="text-[#33333]  font-[300] ">
-            Do you have acount move to{" "}
-            <span
-              onClick={() => navigate("/signIn")}
-              className="text-gray-300 cursor-pointer"
-            >
-              register?
-            </span>
-          </span>
         </form>
       </div>
     </div>

@@ -39,18 +39,22 @@ function LogIn() {
   };
   return (
     <div className="flex justify-center items-center bg-[#f0f0f0]">
-      <div className="w-[360px] mx-auto my-[30vh] py-4 px-6 rounded-[15px] bg-blue-400">
+      <div className="w-[500px] mx-auto my-[30vh] py-4 px-6 rounded-[15px] bg-slate-100">
         <form onSubmit={(e) => handleSubmit(e)} className="felx flex-col">
           <div className="flex justify-between w-full items-center">
-            <h3 className="font-bold  text-[24px] text-white mb-6">Sign In</h3>
+            <h3 className="font-bold  text-[24px] text-black mb-6">Log In</h3>
           </div>
+          <label className="font-[500] text-[#33333]" htmlFor="email">
+            Your e-mail
+          </label>
           <input
             onChange={handleChange}
             name="email"
+            id="email"
             required
             type="email"
-            className="w-[90%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
-            placeholder="Your email"
+            className="w-[100%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
+            placeholder="enter your email"
           />
 
           <label className="font-[500] text-[#33333]" htmlFor="pass">
@@ -58,22 +62,23 @@ function LogIn() {
           </label>
           <input
             onChange={handleChange}
-            className="w-[80%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
+            className="w-[100%] bg-white h-[35px] rounded-[5px] px-3 block mb-4"
             id="pass"
             required
+            placeholder="enter password password"
             name="password"
             type="password"
           />
 
-          <button className="bg-green-400 mb-4 disabled:bg-green-200 hover:bg-green-300 rounded-[10px] font-bold text-[20px] text-white w-full py-3">
+          <button className="bg-blue-400 mb-4 disabled:bg-blue-200 hover:bg-blue-300 rounded-[10px] font-bold text-[20px] text-white w-full py-1">
             submit
           </button>
 
           <span className="text-[#33333]  font-[300] ">
-            If you don not have acount move to {"  "}
+            If you don not have acount  {"  "}
             <span
               onClick={() => navigate("/signUp")}
-              className="text-gray-300 cursor-pointer"
+              className="text-red-400 cursor-pointer"
             >
               SignUp?
             </span>
