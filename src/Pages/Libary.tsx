@@ -55,7 +55,6 @@ function Libary() {
     getdata();
   };
 
-  const updateDocs = () => {};
   return (
     <div className="max-w-[85%] relative mx-auto  pt-6">
 
